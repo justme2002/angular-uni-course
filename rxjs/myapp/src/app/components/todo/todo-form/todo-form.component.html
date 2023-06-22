@@ -1,0 +1,9 @@
+<form [formGroup]="todoForm" (ngSubmit)="onSubmit()">
+  <input type="text" name="title" id="title" placeholder="title..." formControlName="title">
+  <div *ngIf="!title?.valid && (title?.dirty || title?.touched)">
+    <div [hidden]="!title.errors.required">
+      title is required
+    </div>
+  </div>
+</form>
+
