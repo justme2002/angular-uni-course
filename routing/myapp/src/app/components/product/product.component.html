@@ -1,0 +1,8 @@
+<p>product works!</p>
+<ul>
+  <li *ngFor="let product of Products">
+    <a [routerLink]="['/products', product.id]" [state]="{ name: product.name }" [replaceUrl]="true">{{ product.name }}</a>
+    <a (click)="handleNavigateToProductDetail(product.id, product.name)">{{ product.name }} with router injection</a>
+  </li>
+</ul>
+<router-outlet></router-outlet>
